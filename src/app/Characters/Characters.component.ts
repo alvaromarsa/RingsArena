@@ -1,7 +1,7 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'app-characters',
+  selector: 'characters',
   standalone: true,
   imports: [],
   templateUrl: './Characters.component.html',
