@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { RandomNumberService } from '../Services/RandomNumber.service';
+import { CharacterSelectionService } from '../Services/CharacterSelection.service';
 
 @Component({
   selector: 'view-combat',
@@ -11,7 +12,11 @@ import { RandomNumberService } from '../Services/RandomNumber.service';
 export class ViewCombatComponent {
 
   private RandomNumberInyect =inject(RandomNumberService);
-  randomNumber = this.RandomNumberInyect.eleccionDanio();
+  private GoodCharacterInject = inject(CharacterSelectionService);
+  private EvilCharacterInject = inject(CharacterSelectionService);
 
+  randomNumber = this.RandomNumberInyect.eleccionDanio();
+  goodCharacterSelected = this.GoodCharacterInject.GoodCharacterSelection();
+  evilCharacterSelected = this.EvilCharacterInject.EvilCharacterSelection();
 
  }
