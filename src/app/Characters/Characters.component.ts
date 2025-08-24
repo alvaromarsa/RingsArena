@@ -71,7 +71,7 @@ export interface Character {
   const ent: Character = {
     hp: 300,
     isAlive: true,
-    name: 'un ent',
+    name: 'Ent',
     damage: 100,
   };
 
@@ -110,7 +110,7 @@ export interface Character {
   const montaraz: Character = {
     hp: 75,
     isAlive: true,
-    name: 'un montaraz',
+    name: 'Montaraz',
     damage: 55,
     dodge:0.22
   };
@@ -118,7 +118,7 @@ export interface Character {
   const numenoreano: Character = {
     hp: 150,
     isAlive: true,
-    name: 'un númenoreano',
+    name: 'Númenoreano',
     damage: 55,
     dodge: 0.17
   };
@@ -126,7 +126,7 @@ export interface Character {
   const espectro: Character = {
       hp: 200,
       isAlive: true,
-      name: 'un espectro',
+      name: 'Espectro',
       damage: 130,
   };
 
@@ -141,7 +141,7 @@ export interface Character {
   const orco: Character = {
     hp: 80,
     isAlive: true,
-    name: 'un orco',
+    name: 'Orco',
     damage: 40,
     dodge: 0.15
   };
@@ -149,7 +149,7 @@ export interface Character {
   const nazgul: Character = {
     hp: 400,
     isAlive: true,
-    name: 'un Nazgul',
+    name: 'Nazgul',
     damage: 120,
     dodge: 0.25
   };
@@ -164,7 +164,7 @@ export interface Character {
   const haradrim: Character = {
     hp: 90,
     isAlive: true,
-    name: 'un haradrim',
+    name: 'Haradrim',
     damage: 45,
     dodge: 0.23
   };
@@ -172,14 +172,14 @@ export interface Character {
   const mumakil: Character = {
     hp: 300,
     isAlive: true,
-    name: 'un mumakil',
+    name: 'Mumakil',
     damage: 130,
   };
 
   const troll: Character = {
     hp: 200,
     isAlive: true,
-    name: 'un troll',
+    name: 'Troll',
     damage: 115,
   };
 
@@ -202,7 +202,7 @@ export interface Character {
   const urukHai: Character = {
     hp: 115,
     isAlive: true,
-    name: 'un uruk-hai',
+    name: 'Uruk-hai',
     damage: 50,
     dodge: 0.13
   };
@@ -234,7 +234,7 @@ export interface Character {
   const trasgo: Character = {
     hp: 40,
     isAlive: true,
-    name: 'un trasgo',
+    name: 'Trasgo',
     damage: 25,
     dodge: 0.22
   };
@@ -242,7 +242,7 @@ export interface Character {
   const balrog: Character = {
     hp: 500,
     isAlive: true,
-    name: 'un balrog',
+    name: 'Balrog',
     damage: 150,
   };
 
