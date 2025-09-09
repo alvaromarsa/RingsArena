@@ -1,4 +1,5 @@
 import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { AsyncPipe } from '@angular/common';
 
 import { RandomNumberService } from '../Services/RandomNumber.service';
 import { CharacterSelectionService } from '../Services/CharacterSelection.service';
@@ -7,7 +8,7 @@ import { CombatService } from '../Services/Combat.service';
 @Component({
   selector: 'view-combat',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './ViewCombat.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
@@ -22,15 +23,14 @@ export class ViewCombatComponent {
   goodCharacterSelected = this.GoodCharacterInject.GoodCharacterSelection();
   evilCharacterSelected = this.EvilCharacterInject.EvilCharacterSelection();
 
-  resultado = this.CombatServiceInject.resultadoCombate;
-  muerte = this.CombatServiceInject.estaMuerto;
+  resultado = this.CombatServiceInject.resultadoCombate$;
+  muerte = this.CombatServiceInject.estaMuerto$;
+
+  resultado2 = this.CombatServiceInject.resultados$
 
   ComenzarCombate () :void {
 
-
     this.CombatServiceInject.causarDanio(this.goodCharacterSelected, this.evilCharacterSelected);
-
-
 
   }
 

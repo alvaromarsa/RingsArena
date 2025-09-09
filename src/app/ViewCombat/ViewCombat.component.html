@@ -1,12 +1,21 @@
 <div>
-  <p>{{goodCharacterSelected.name}} se enfrenta a {{evilCharacterSelected.name}}</p>
-
+  <button (click)="ComenzarCombate()">Comenzar combate</button>
 </div>
 <div>
-  <button (click)="ComenzarCombate()">Comenzar combate</button>
-
-  <div>{{resultado}}
-</div>
+  <p>{{goodCharacterSelected.name}} se enfrenta a {{evilCharacterSelected.name}}</p>
 </div>
 
+<div>
 
+    @for (item of resultado2 | async; track $index) {
+        <div>
+      <li>
+        {{item}}
+      </li>
+    </div>
+    }
+    {{muerte | async}}
+
+</div>
+
+<div></div>
