@@ -17,6 +17,7 @@ export interface Character {
   name: string;
   damage: number;
   dodge?: number;
+  level: number;
 }
 
 
@@ -25,7 +26,8 @@ export interface Character {
     isAlive: true,
     name: 'Aragorn',
     damage: 70,
-    dodge: 0.20
+    dodge: 0.20,
+    level: 1
   };
 
   const legolas: Character = {
@@ -33,7 +35,8 @@ export interface Character {
     isAlive: true,
     name: 'Legolas',
     damage: 60,
-    dodge: 0.25
+    dodge: 0.25,
+    level: 1
   };
 
   const gimli: Character = {
@@ -41,7 +44,8 @@ export interface Character {
     isAlive: true,
     name: 'Gimli',
     damage: 50,
-    dodge: 0.10
+    dodge: 0.10,
+    level: 1
   };
 
   const frodo: Character = {
@@ -49,7 +53,8 @@ export interface Character {
     isAlive: true,
     name: 'Frodo',
     damage: 30,
-    dodge: 0.30
+    dodge: 0.30,
+    level: 1
   };
 
   const boromir: Character = {
@@ -57,7 +62,8 @@ export interface Character {
     isAlive: true,
     name: 'Boromir',
     damage: 45,
-    dodge: 0.20
+    dodge: 0.20,
+    level: 1
   };
 
   const gandalf: Character = {
@@ -65,7 +71,8 @@ export interface Character {
     isAlive: true,
     name: 'Gandalf',
     damage: 150,
-    dodge: 0.25
+    dodge: 0.25,
+    level: 1
   };
 
   const ent: Character = {
@@ -73,6 +80,7 @@ export interface Character {
     isAlive: true,
     name: 'Ent',
     damage: 100,
+    level: 1
   };
 
   const theoden: Character = {
@@ -80,7 +88,8 @@ export interface Character {
     isAlive: true,
     name: 'Theoden',
     damage: 45,
-    dodge: 0.20
+    dodge: 0.20,
+    level: 1
   };
 
   const eomer: Character = {
@@ -88,7 +97,8 @@ export interface Character {
     isAlive: true,
     name: 'Eomer',
     damage: 50,
-    dodge: 0.20
+    dodge: 0.20,
+    level: 1
   };
 
   const gwaihir: Character = {
@@ -96,7 +106,8 @@ export interface Character {
     isAlive: true,
     name: 'Gwaihir',
     damage: 120,
-    dodge: 0.35
+    dodge: 0.35,
+    level: 1
   };
 
   const sam: Character = {
@@ -104,7 +115,8 @@ export interface Character {
     isAlive: true,
     name: 'Sam',
     damage: 35,
-    dodge:0.30
+    dodge: 0.30,
+    level: 1
   };
 
   const montaraz: Character = {
@@ -112,7 +124,8 @@ export interface Character {
     isAlive: true,
     name: 'Montaraz',
     damage: 55,
-    dodge:0.22
+    dodge: 0.22,
+    level: 1
   };
 
   const numenoreano: Character = {
@@ -120,22 +133,25 @@ export interface Character {
     isAlive: true,
     name: 'Númenoreano',
     damage: 55,
-    dodge: 0.17
+    dodge: 0.17,
+    level: 1
   };
 
   const espectro: Character = {
-      hp: 200,
-      isAlive: true,
-      name: 'Espectro',
-      damage: 130,
+    hp: 200,
+    isAlive: true,
+    name: 'Espectro',
+    damage: 130,
+    level: 1
   };
 
   const radagast: Character = {
-      hp: 435,
-      isAlive: true,
-      name: 'Radagast',
-      damage: 135,
-      dodge: 0.25
+    hp: 435,
+    isAlive: true,
+    name: 'Radagast',
+    damage: 135,
+    dodge: 0.25,
+    level: 1
   };
 
   const orco: Character = {
@@ -143,7 +159,8 @@ export interface Character {
     isAlive: true,
     name: 'Orco',
     damage: 40,
-    dodge: 0.15
+    dodge: 0.15,
+    level: 1
   };
 
   const nazgul: Character = {
@@ -151,7 +168,8 @@ export interface Character {
     isAlive: true,
     name: 'Nazgul',
     damage: 120,
-    dodge: 0.25
+    dodge: 0.25,
+    level: 1
   };
 
   const sauron: Character = {
@@ -159,6 +177,7 @@ export interface Character {
     isAlive: true,
     name: 'Sauron',
     damage: 150,
+    level: 1
   };
 
   const haradrim: Character = {
@@ -166,7 +185,8 @@ export interface Character {
     isAlive: true,
     name: 'Haradrim',
     damage: 45,
-    dodge: 0.23
+    dodge: 0.23,
+    level: 1
   };
 
   const mumakil: Character = {
@@ -174,6 +194,7 @@ export interface Character {
     isAlive: true,
     name: 'Mumakil',
     damage: 130,
+    level: 1
   };
 
   const troll: Character = {
@@ -181,6 +202,7 @@ export interface Character {
     isAlive: true,
     name: 'Troll',
     damage: 115,
+    level: 1
   };
 
   const saruman: Character = {
@@ -188,7 +210,8 @@ export interface Character {
     isAlive: true,
     name: 'Saruman',
     damage: 150,
-    dodge: 0.25
+    dodge: 0.25,
+    level: 1
   };
 
   const gollum: Character = {
@@ -196,7 +219,8 @@ export interface Character {
     isAlive: true,
     name: 'Gollum',
     damage: 40,
-    dodge: 0.35
+    dodge: 0.35,
+    level: 1
   };
 
   const urukHai: Character = {
@@ -204,7 +228,8 @@ export interface Character {
     isAlive: true,
     name: 'Uruk-hai',
     damage: 50,
-    dodge: 0.13
+    dodge: 0.13,
+    level: 1
   };
 
   const lenguaDeSerpiente: Character = {
@@ -212,7 +237,8 @@ export interface Character {
     isAlive: true,
     name: 'Lengua de serpiente',
     damage: 30,
-    dodge: 0.27
+    dodge: 0.27,
+    level: 1
   };
 
   const bocaDeSauron: Character = {
@@ -220,7 +246,8 @@ export interface Character {
     isAlive: true,
     name: 'Boca de Sauron',
     damage: 50,
-    dodge: 0.18
+    dodge: 0.18,
+    level: 1
   };
 
   const ellaLarania: Character = {
@@ -228,7 +255,7 @@ export interface Character {
     isAlive: true,
     name: 'Ella-Laraña',
     damage: 120,
-
+    level: 1
   };
 
   const trasgo: Character = {
@@ -236,7 +263,8 @@ export interface Character {
     isAlive: true,
     name: 'Trasgo',
     damage: 25,
-    dodge: 0.22
+    dodge: 0.22,
+    level: 1
   };
 
   const balrog: Character = {
@@ -244,6 +272,7 @@ export interface Character {
     isAlive: true,
     name: 'Balrog',
     damage: 150,
+    level: 1
   };
 
 export const personajesBienObjetos: Character[] = [

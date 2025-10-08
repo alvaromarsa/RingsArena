@@ -1,0 +1,21 @@
+<section>
+  <h1>Personajes del bien</h1>
+  @for (i of personajesBien; track $index) {
+
+    <h2>Nombre: {{i.name}}</h2>
+    <h3>Vida: {{i.hp}}</h3>
+    <h3>Daño: {{i.damage}}</h3>
+    <h3>Nivel: {{i.level}}</h3>
+  }
+
+  <h1>Personajes del mal</h1>
+  @for (i of personajesMal; track $index) {
+
+    <h2>Nombre: {{i.name}}</h2>
+    <h3>Vida: {{i.hp}}</h3>
+    <h3>Daño: {{i.damage}}</h3>
+    <h3>Nivel: {{i.level}}</h3>
+
+  }
+
+</section>

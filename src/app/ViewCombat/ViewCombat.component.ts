@@ -23,14 +23,17 @@ export class ViewCombatComponent {
   goodCharacterSelected = this.GoodCharacterInject.GoodCharacterSelection();
   evilCharacterSelected = this.EvilCharacterInject.EvilCharacterSelection();
 
-  resultado = this.CombatServiceInject.resultadoCombate$;
+  combate = this.CombatServiceInject.combateIniciado
+  //resultado = this.CombatServiceInject.resultadoCombate$;
   muerte = this.CombatServiceInject.estaMuerto$;
 
   resultado2 = this.CombatServiceInject.resultados$
 
   ComenzarCombate () :void {
 
+
     this.CombatServiceInject.causarDanio(this.goodCharacterSelected, this.evilCharacterSelected);
+    this.combate = true;
 
   }
 

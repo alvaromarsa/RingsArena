@@ -12,10 +12,12 @@ import { RandomNumberService } from './RandomNumber.service';
 })
 export class CombatService {
 
+   combateIniciado = false;
+
    GoodCharacterSelected = this.characterSelectionService.GoodCharacterSelection();
    EvilCharacterSelected = this.characterSelectionService.EvilCharacterSelection();
 
-   resultadoCombate$ = new Subject<string>();
+   //resultadoCombate$ = new Subject<string>();
    estaMuerto$ = new Subject<string>();
 
     public resultadosArray: string[] = [];
@@ -89,9 +91,7 @@ export class CombatService {
   }
 
 
-    enviarMuerte(muerte:string){
-      this.estaMuerto$.next(muerte);
-    }
+
 
   constructor(private characterSelectionService: CharacterSelectionService, private randomNumberService : RandomNumberService) { }
 
