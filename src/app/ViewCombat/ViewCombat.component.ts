@@ -4,11 +4,12 @@ import { AsyncPipe } from '@angular/common';
 import { RandomNumberService } from '../Services/RandomNumber.service';
 import { CharacterSelectionService } from '../Services/CharacterSelection.service';
 import { CombatService } from '../Services/Combat.service';
+import { NavbarComponent } from "../pages/navbar/navbar.component";
 
 @Component({
   selector: 'view-combat',
   standalone: true,
-  imports: [AsyncPipe],
+  imports: [AsyncPipe, NavbarComponent],
   templateUrl: './ViewCombat.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

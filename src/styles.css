@@ -1,1 +1,83 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Uncial+Antiqua&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.btn-primary-custom {
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-semibold shadow-md transition duration-300 bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2;
+}
+
+.active-link {
+  /* Anula la sombra y el fondo primario por uno más oscuro */
+  @apply shadow-none bg-blue-700 hover:bg-blue-700;
+  /* Puedes añadir un borde para que se destaque más */
+  /* @apply border-b-4 border-blue-900; */
+}
+
+.navbar-custom {
+  /* Layout: Usa flexbox para alinear elementos */
+  @apply flex flex-col items-center;
+
+  /* Espaciado y Fondo: padding vertical y horizontal, color de fondo */
+  @apply !p-4 !shadow-lg !bg-red-900;
+
+  /* Altura y Posicionamiento: opcional, para que siempre esté arriba */
+ @apply min-h-24;
+
+}
+
+.btn-medieval {
+  /* Layout y Texto Base (similar al primario) */
+  @apply inline-flex items-center justify-center px-4 py-2 rounded-md font-bold transition duration-300 uppercase tracking-wider;
+
+  /* Fondo, Texto y Borde: Gris muy oscuro, texto ligeramente dorado/claro, borde sutil */
+  @apply bg-gray-900 text-yellow-100 border border-gray-700;
+
+  /* Relieve y Sombra: Usamos shadow-inner para un efecto de "hundido" o grabado */
+  @apply shadow-lg shadow-gray-700/50;
+
+  /* Efecto Hover: Se aclara ligeramente para simular un brillo metálico */
+  @apply hover:bg-gray-700 hover:shadow-xl hover:shadow-gray-700/75;
+
+  /* Enfoque para accesibilidad */
+  @apply focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-900;
+}
+
+.btn-elvish {
+  /* Layout y Base: Ligero, delicado y ligeramente curvo */
+  @apply inline-flex items-center justify-center
+         px-6 py-2 rounded-full font-light tracking-wide
+         transition duration-300 uppercase;
+
+  /* Color y Borde: Fondo plateado/gris muy claro, texto oscuro y borde fino */
+  @apply bg-gray-200 text-gray-800 border border-gray-400;
+
+  /* Efecto Visual: Sombra sutil para un aspecto pulido */
+  @apply shadow-md shadow-gray-500/50;
+
+  /* Efecto Hover: Brillo sutil y más claro al pasar el ratón */
+  @apply hover:bg-gray-50 hover:border-gray-300 hover:shadow-lg;
+
+  /* Enfoque para accesibilidad (anillo plateado) */
+  @apply focus:outline-none focus:ring-2 focus:ring-gray-300 focus:ring-offset-2 focus:ring-offset-rose-950;
+}
+
+.card-custom {
+  /* Fondo, Esquinas y Sombra: Típico de una tarjeta limpia */
+  @apply bg-morgul-shadow rounded-lg shadow-xl p-6;
+
+  /* Opcional: Define un ancho por defecto, similar a 'w-96' de DaisyUI */
+  /* @apply w-96; */
+}
+
+/* ⬅️ CLASES PARA EL CUERPO Y EL TÍTULO DENTRO DE LA CARD */
+
+.card-title-custom {
+  /* Estilo para el título de la tarjeta */
+  @apply text-xl font-bold mb-3 text-gray-800;
+}
+
+.card-body-custom {
+  /* Estilo para el cuerpo del contenido */
+  @apply text-gray-700;
+}

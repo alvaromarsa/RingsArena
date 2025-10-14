@@ -1,16 +1,16 @@
-
+<navbar/>
 <section>
-  <div>
-    <button (click)="ComenzarCombate()">Comenzar combate</button>
+  <div class="flex justify-center w-full">
+    <button (click)="ComenzarCombate()" class="btn-medieval mr-2 mt-4 ">Comenzar combate</button>
   </div>
 
   @if (combate) {
-    <div>
+    <div class="mt-5">
       <p>{{goodCharacterSelected.name}} se enfrenta a {{evilCharacterSelected.name}}</p>
     </div>
   }
 
-  <div>
+  <div class="mt-5">
 
     @for (item of resultado2 | async; track $index) {
         <div>

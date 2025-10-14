@@ -1,12 +1,13 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
-import { NavbarComponent } from '../navbar/navbar.component';
+
+
 
 @Component({
-  selector: 'menu',
+  selector: 'navbar',
   standalone: true,
-  imports: [RouterLink, RouterLinkActive, NavbarComponent],
-  templateUrl: './menu.component.html',
+  imports: [RouterLink, RouterLinkActive],
+  templateUrl: './navbar.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MenuComponent { }
+export class NavbarComponent { }
