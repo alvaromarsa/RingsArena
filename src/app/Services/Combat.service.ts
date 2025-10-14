@@ -25,6 +25,7 @@ export class CombatService {
 
   public causarDanio(p1: Character, p2: Character): void {
 
+    this.resultadosArray = [];
     const { name: name1 } = p1;
     const { name: name2 } = p2;
 
@@ -91,6 +92,16 @@ export class CombatService {
   }
 
 
+  public cleanCombatText (): void{
+    this.resultados$.next([]);
+
+    // Limpia el mensaje de muerte
+    this.estaMuerto$.next('');
+
+    // (Opcional) Reinicia la bandera de combate si es necesario
+    this.combateIniciado = false;
+
+  }
 
 
   constructor(private characterSelectionService: CharacterSelectionService, private randomNumberService : RandomNumberService) { }
