@@ -17,7 +17,7 @@ export interface Character {
   name: string;
   damage: number;
   dodge?: number;
-  level: number;
+  level?: number;
 }
 
 
