@@ -2,7 +2,7 @@
 <section class="mt-100" >
   <h1 class="text-4xl text-center mb-6 font-bold text-morgul-shadow  px-4">Personajes del bien</h1>
   <div class="grid grid-cols-3 gap-6 p-4">
-    @for (i of personajesBien; track $index) {
+    @for (i of goodCharacters$ | async; track $index) {
       <div class="card-custom">
         <h2 class="card-title-custom ">Nombre: {{i.name}}</h2>
           <div class="card-body-custom ">
@@ -16,7 +16,7 @@
 
   <h1 class="text-4xl text-center mb-6 font-bold text-morgul-shadow mt-5">Personajes del mal</h1>
   <div class="grid grid-cols-3 gap-6 p-4">
-    @for (i of personajesMal; track $index) {
+    @for (i of evilCharacters$ | async; track $index) {
       <div class="card-custom">
         <h2 class="card-title-custom">Nombre: {{i.name}}</h2>
           <div class="card-body-custom">

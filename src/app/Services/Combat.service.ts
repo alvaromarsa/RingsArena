@@ -1,10 +1,11 @@
-import { Injectable } from '@angular/core';
-import { Subject } from 'rxjs';
+import { inject, Injectable } from '@angular/core';
+import { map, Observable, Subject, take } from 'rxjs';
 
 
 import { CharacterSelectionService } from './CharacterSelection.service';
 import { Character } from '../Characters/Characters.component';
 import { RandomNumberService } from './RandomNumber.service';
+//import { CharacterStateService } from './CharacterState.service';
 
 
 @Injectable({
@@ -13,9 +14,11 @@ import { RandomNumberService } from './RandomNumber.service';
 export class CombatService {
 
    combateIniciado = false;
+   characterSelection = inject(CharacterSelectionService);
 
-   GoodCharacterSelected = this.characterSelectionService.GoodCharacterSelection();
-   EvilCharacterSelected = this.characterSelectionService.EvilCharacterSelection();
+   public selectedClones: Character[] = [];
+   //GoodCharacterSelected = this.characterSelectionService.GoodCharacterSelection();
+   //EvilCharacterSelected = this.characterSelectionService.EvilCharacterSelection();
 
    //resultadoCombate$ = new Subject<string>();
    estaMuerto$ = new Subject<string>();
@@ -23,7 +26,26 @@ export class CombatService {
     public resultadosArray: string[] = [];
     public resultados$ = new Subject<string[]>();
 
+    ComenzarCombate(): void {
+        this.characterSelection.getCharactersForCombat().subscribe({
+            next: (clonesList: Character[]) => {
+                // ✅ Aquí recibes el array de dos personajes CLONADOS y seleccionados
+                this.selectedClones = clonesList;
+
+                // Ahora tienes acceso a los clones y puedes pasarlos a la lógica de combate
+                const goodClone = this.selectedClones[0];
+                const evilClone = this.selectedClones[1];
+
+                this.causarDanio(goodClone, evilClone);
+
+                // Si usas OnPush, recuerda forzar la detección de cambios para actualizar la vista
+                // this.cdr.detectChanges();
+            }
+        });
+    }
+
   public causarDanio(p1: Character, p2: Character): void {
+
 
     this.resultadosArray = [];
     const { name: name1 } = p1;
@@ -104,6 +126,6 @@ export class CombatService {
   }
 
 
-  constructor(private characterSelectionService: CharacterSelectionService, private randomNumberService : RandomNumberService) { }
+  constructor(private randomNumberService : RandomNumberService) { }
 
 }
