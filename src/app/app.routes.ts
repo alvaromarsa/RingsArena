@@ -3,6 +3,7 @@ import { ViewCombatComponent } from './ViewCombat/ViewCombat.component';
 import { CharacterDescriptionComponent } from './pages/character-description/character-description.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { CharacterCreationComponent } from './pages/character-creation/character-creation.component';
+import { CharacterApi } from './pages/character-api/character-api';
 
 export const routes: Routes = [
 
@@ -17,6 +18,10 @@ export const routes: Routes = [
   },
   { path: 'character-creation',
     component: CharacterCreationComponent,
+  },
+  {
+    path: 'personaje/:name', // El ':name' indica que es un parámetro
+    component: CharacterApi,
   }
 
 

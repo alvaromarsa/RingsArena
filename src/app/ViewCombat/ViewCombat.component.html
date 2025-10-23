@@ -1,16 +1,16 @@
 <navbar/>
 <section>
-  <div class="flex justify-center w-full">
+  <div class="flex justify-center w-full font-elvish font-light italic text-yellow-100">
     <button (click)="ComenzarCombate()" class="btn-medieval mr-2 mt-4 ">Comenzar combate</button>
   </div>
 
   @if (combate) {
     <div class="mt-5">
-      <p>{{CombatServiceInject.selectedClones[0].name}} se enfrenta a {{CombatServiceInject.selectedClones[1].name}}</p>
+      <p class="text-3xl font-elvish font-light italic text-yellow-500">{{CombatServiceInject.selectedClones[0].name}} se enfrenta a {{CombatServiceInject.selectedClones[1].name}}</p>
     </div>
   }
 
-  <div class="mt-5">
+  <div class="mt-5 text-3xl font-elvish font-light italic text-green-600">
 
     @for (item of resultado2 | async; track $index) {
         <div>

@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
+
 @Component({
   selector: 'characters',
   standalone: true,
@@ -9,7 +10,28 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 })
 export class CharactersComponent { }
 
+export interface ApiCharacter {
+    _id: string;
+    height: string;
+    race: string;
+    gender: string;
+    birth: string;
+    spouse: string;
+    death: string;
+    realm: string;
+    hair: string;
+    name: string;
+    wikiUrl: string;
+}
 
+export interface ApiResponse {
+    docs: ApiCharacter[]; // 👈 Aquí está la propiedad 'docs'
+    total: number;
+    limit: number;
+    offset: number;
+    page: number;
+    pages: number;
+}
 
 export interface Character {
   hp: number;

@@ -5,11 +5,12 @@ import { personajesBienObjetos, personajesMalObjetos, Character } from '../../Ch
 import { NavbarComponent } from "../navbar/navbar.component";
 import { CharacterStateService } from '../../Services/CharacterState.service';
 import { Observable } from 'rxjs';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'character-description',
   standalone: true,
-  imports: [NavbarComponent, AsyncPipe],
+  imports: [NavbarComponent, AsyncPipe, RouterLink],
   templateUrl: './character-description.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })

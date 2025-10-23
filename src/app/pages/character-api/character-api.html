@@ -1,0 +1,28 @@
+<navbar/>
+<section class="mt-10">
+  @if (cargando) {
+    <div class="text-3xl font-elvish font-light italic text-yellow-100">Cargando detalles de {{ nombrePersonaje }}...</div>
+  }
+  @else if (error) {
+    <div class="error" style="color: red; padding: 10px; border: 1px solid red;">
+      {{ error }}
+    </div>
+  }
+  @else if (datosApi) {
+    <div>
+        <h1 class="text-3xl font-elvish font-light italic text-yellow-100">Detalles de {{ datosApi.name }}</h1>
+        <p class="font-elvish"><strong class="text-green-400">Raza:</strong> {{ datosApi.race || 'N/A' }}</p>
+        <p class="font-elvish"><strong  class="text-green-400">Género:</strong> {{ datosApi.gender || 'N/A' }}</p>
+        <p class="font-elvish"><strong  class="text-green-400">Lugar de Nacimiento:</strong> {{ datosApi.birth || 'Desconocido' }}</p>
+        <p class="font-elvish"><strong  class="text-green-400">Reino/Región:</strong> {{ datosApi.realm || 'N/A' }}</p>
+        <p class="font-elvish"><strong  class="text-green-400">Estatura:</strong> {{ datosApi.height || 'N/A' }}</p>
+        <p class="font-elvish"><strong  class="text-green-400">Pelo:</strong> {{ datosApi.hair || 'N/A' }}</p>
+
+        @if (datosApi.wikiUrl) {
+            <a [href]="datosApi.wikiUrl" target="_blank" style="display: block; margin-top: 20px;" class="font-elvish text-green-600">
+                Ver más en la Wiki
+            </a>
+        }
+    </div>
+  }
+</section>
