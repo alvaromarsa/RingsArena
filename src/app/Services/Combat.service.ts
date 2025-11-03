@@ -1,11 +1,11 @@
 import { inject, Injectable } from '@angular/core';
-import { map, Observable, Subject, take } from 'rxjs';
+import { Subject} from 'rxjs';
 
 
 import { CharacterSelectionService } from './CharacterSelection.service';
 import { Character } from '../Characters/Characters.component';
 import { RandomNumberService } from './RandomNumber.service';
-//import { CharacterStateService } from './CharacterState.service';
+
 
 
 @Injectable({
@@ -17,10 +17,7 @@ export class CombatService {
    characterSelection = inject(CharacterSelectionService);
 
    public selectedClones: Character[] = [];
-   //GoodCharacterSelected = this.characterSelectionService.GoodCharacterSelection();
-   //EvilCharacterSelected = this.characterSelectionService.EvilCharacterSelection();
 
-   //resultadoCombate$ = new Subject<string>();
    estaMuerto$ = new Subject<string>();
 
     public resultadosArray: string[] = [];
@@ -38,11 +35,11 @@ export class CombatService {
 
                 this.causarDanio(goodClone, evilClone);
 
-                // Si usas OnPush, recuerda forzar la detección de cambios para actualizar la vista
-                // this.cdr.detectChanges();
             }
         });
     }
+
+
 
   public causarDanio(p1: Character, p2: Character): void {
 

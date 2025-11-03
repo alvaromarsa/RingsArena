@@ -1,0 +1,141 @@
+<navbar/>
+
+<section>
+
+
+  <!--tipo arbol-->
+<div class="tournament-tree mx-auto p-6 bg-gray-50 min-h-screen pt-10">
+
+  <h2 class="text-4xl font-extrabold text-gray-800 mb-8 border-b-4 border-yellow-600 pb-2">
+    ⚔️ Estructura del Torneo
+  </h2>
+
+  @if (parejasDeBatalla.length === 0) {
+    <div class="text-center p-10 bg-white rounded-lg shadow-md">
+      <p class="text-xl text-gray-500">Aún no se han formado emparejamientos.</p>
+    </div>
+
+  <div class="flex justify-center w-full font-elvish font-light italic text-yellow-100">
+    <button (click)="characterSelectionTournament()" class="btn-medieval mr-2 mt-4 mb-5">¡Sortear emparejamientos!</button>
+  </div>
+  }
+
+  @if (tournamentFinished && finalWinner) {
+    <div class="text-center my-10 p-5 bg-green-100 border-4 border-green-600 rounded-lg shadow-xl">
+        <h2 class="text-4xl font-extrabold text-green-800">
+            ¡FIN DEL TORNEO!
+        </h2>
+        <p class="text-3xl text-green-700 mt-2">
+            El campeón es: <span class="text-green-900">{{ finalWinner.name }}</span>
+        </p>
+    </div>
+    <div class="flex justify-center w-full font-elvish font-light italic text-yellow-100">
+    <button class="btn-medieval text-sm py-1 px-3 "
+        (click)="characterSelectionTournament()">Comenzar nuevo torneo</button>
+  </div>
+  }
+
+
+  @else {
+    <div class="flex flex-col space-y-8">
+
+      @for (pareja of parejasDeBatalla; track $index) {
+
+        <div class="flex items-center space-x-4 tournament-round">
+
+          <div class="battle-match flex-shrink-0 w-80 p-4 bg-white border border-gray-300 rounded-lg shadow-md relative">
+
+            <p class="absolute -top-2 left-1/2 transform -translate-x-1/2 px-2 text-xs font-bold text-white bg-yellow-600 rounded">
+              Batalla #{{ $index + 1 }}
+            </p>
+
+            <div class="space-y-2 pt-2">
+
+              <div class="flex justify-between items-center p-1 bg-green-50 rounded border-l-4 border-green-500">
+                <span class="text-sm font-semibold text-green-700 truncate" #buenoName>{{ pareja.bueno.name }}</span>
+                <span class="text-xs text-gray-500">HP: {{ pareja.bueno.hp }}</span>
+              </div>
+
+              <div class="text-center text-xs font-bold text-gray-500">
+                VS
+              </div>
+
+
+              <div class="flex justify-between items-center p-1 bg-red-50 rounded border-l-4 border-red-500">
+
+                  @if(pareja.malo){
+                      <span class="text-sm font-semibold text-red-700 truncate" #maloName>
+                        {{ pareja.malo.name }}
+                      </span>
+                      <span class="text-xs text-gray-500">HP: {{ pareja.malo.hp }}</span>
+                    } @else {
+                      <span class="text-sm font-semibold text-red-700 truncate text-center w-full">
+                        — SIN CONTRINCANTE —
+                      </span>
+                    }
+
+
+              </div>
+            </div>
+          </div>
+
+          <div class="flex-grow flex items-center h-full">
+            <div class="w-10 h-1 bg-blue-400"></div>
+            <div class="p-2 text-center text-sm border-l-4 border-blue-400 font-bold w-40">
+              @if (pareja.nombreGanador) {
+                  <p class="text-green-800 text-lg">
+                      {{ pareja.nombreGanador }}
+                  </p>
+              } @else {
+                  <p class="text-gray-600">
+                      Ganador
+                  </p>
+              }
+            </div>
+          </div>
+         <div class="flex space-x-4 mt-2 items-center h-full">
+
+
+          <div class="flex-grow p-2 bg-yellow-100 border border-yellow-400 rounded-lg text-xs">
+            <ul class="space-y-1">
+              @for (logItem of pareja.logCombate; track $index) {
+                    <li>{{ logItem }}</li>
+                  }
+            </ul>
+          </div>
+
+
+          @if (pareja.combateTerminado) {
+              <p class="mt-2 font-extrabold text-green-700">
+                  {{ pareja.nombreGanador }} ha ganado
+              </p>
+            }
+
+          <button (click)="characterSendCombat(pareja)"
+                  [disabled]="(combateActivo && combateActivo !== pareja || !pareja.bueno || !pareja.malo || pareja.combateTerminado)"
+                  class="btn-medieval text-sm py-1 px-3 flex-shrink-0 ">
+              {{ combateActivo === pareja && !pareja.combateTerminado ? 'Luchando...' : 'Combate' }}
+          </button>
+
+
+        </div>
+
+
+        </div>
+
+      }
+    @if (parejasDeBatalla.length != 0) {
+      <div class="flex justify-center w-full mt-8">
+        <button class="btn-medieval text-sm py-1 px-3 "
+        (click)="asignacionRonda()"
+        [disabled]="numeroCombates != parejasDeBatalla.length "
+
+        >Siguiente ronda </button>
+      </div>
+    }
+    </div>
+
+  }
+</div>
+
+</section>

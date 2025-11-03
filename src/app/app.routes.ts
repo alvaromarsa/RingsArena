@@ -4,6 +4,7 @@ import { CharacterDescriptionComponent } from './pages/character-description/cha
 import { MenuComponent } from './pages/menu/menu.component';
 import { CharacterCreationComponent } from './pages/character-creation/character-creation.component';
 import { CharacterApi } from './pages/character-api/character-api';
+import { TournamentComponent } from './pages/tournament/tournament,component';
 
 export const routes: Routes = [
 
@@ -22,6 +23,10 @@ export const routes: Routes = [
   {
     path: 'personaje/:name', // El ':name' indica que es un parámetro
     component: CharacterApi,
+  },
+  {
+    path: 'tournament',
+    component: TournamentComponent,
   }
 
 

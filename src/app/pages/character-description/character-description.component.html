@@ -1,15 +1,15 @@
 <navbar/>
-<section class="mt-100" >
+<section class="mt-10 font-elvish" >
   <h1 class="text-4xl text-center mb-6 font-bold text-morgul-shadow  px-4">Personajes del bien</h1>
   <div class="grid grid-cols-3 gap-6 p-4">
     @for (i of goodCharacters$ | async; track $index) {
       <a [routerLink]="['/personaje', i.name]" class="block">
       <div class="card-custom">
-        <h2 class="card-title-custom ">Nombre: {{i.name}}</h2>
+        <span class="card-title-custom text-yellow-300">Nombre: </span><span class="card-title-custom text-orange-500">{{i.name}}</span>
           <div class="card-body-custom ">
-            <h3>Vida: {{i.hp}}</h3>
-            <h3>Daño: {{i.damage}}</h3>
-            <h3>Esquiva: {{i.dodge ?? 0}}</h3>
+            <span class="text-green-400">Vida: </span><span class="text-yellow-400">{{i.hp}}</span><br>
+            <span class="text-green-400">Daño: </span><span class="text-yellow-400">{{i.damage}}</span><br>
+            <span class="text-green-400">Esquiva: </span><span class="text-yellow-400">{{i.dodge ?? 0}}</span>
           </div>
       </div>
     </a>
@@ -21,11 +21,11 @@
     @for (i of evilCharacters$ | async; track $index) {
       <a [routerLink]="['/personaje', i.name]" class="block">
       <div class="card-custom">
-        <h2 class="card-title-custom">Nombre: {{i.name}}</h2>
+        <span class="card-title-custom text-yellow-300">Nombre: </span><span class="card-title-custom text-orange-500">{{i.name}}</span>
           <div class="card-body-custom">
-            <h3>Vida: {{i.hp}}</h3>
-            <h3>Daño: {{i.damage}}</h3>
-            <h3>Esquiva: {{i.dodge ?? 0}}</h3>
+            <span class="text-green-400">Vida: </span><span class="text-yellow-400">{{i.hp}}</span><br>
+            <span class="text-green-400">Daño: </span><span class="text-yellow-400">{{i.damage}}</span><br>
+            <span class="text-green-400">Esquiva: </span><span class="text-yellow-400">{{i.dodge ?? 0}}</span>
           </div>
       </div>
     </a>

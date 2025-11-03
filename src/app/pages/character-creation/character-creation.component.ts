@@ -61,6 +61,7 @@ export class CharacterCreationComponent {
     const newCharacter: Character ={
 
       hp : vidaValue,
+      maxhp : vidaValue,
       isAlive : true,
       name : name,
       damage : powerValue,

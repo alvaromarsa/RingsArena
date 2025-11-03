@@ -1,6 +1,6 @@
 <navbar/>
 <div class="mt-14">
-  <form [formGroup]="myForm" class="w-full max-w-sm" (ngSubmit)="addCharacter(nombreInput.value, poderInput.value, vidaInput.value, esquivaInput.value, alineamientoInput.value)">
+  <form [formGroup]="myForm" class="w-full max-w-sm font-elvish" (ngSubmit)="addCharacter(nombreInput.value, poderInput.value, vidaInput.value, esquivaInput.value, alineamientoInput.value)">
     <div class="md:flex md:items-center mb-6">
       <div class="md:w-1/3">
         <label class="block text-gray-500 font-bold md:text-right mb-1 md:mb-0 pr-4">
@@ -121,8 +121,7 @@
     <div class="md:flex md:items-center">
       <div class="md:w-1/3"></div>
       <div class="md:w-2/3">
-        <button class="btn-elvish font-elvish font-light italic text-yellow-100" type="submit"
-              >
+        <button class="btn-elvish font-elvish font-light italic text-yellow-100" type="submit">
           Añadir
         </button>
       </div>

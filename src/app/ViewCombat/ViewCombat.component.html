@@ -1,5 +1,5 @@
 <navbar/>
-<section>
+<section class="ml-10">
   <div class="flex justify-center w-full font-elvish font-light italic text-yellow-100">
     <button (click)="ComenzarCombate()" class="btn-medieval mr-2 mt-4 ">Comenzar combate</button>
   </div>
@@ -10,17 +10,18 @@
     </div>
   }
 
-  <div class="mt-5 text-3xl font-elvish font-light italic text-green-600">
+  <div class="mt-5 text-3xl font-elvish font-light italic text-red-700">
 
     @for (item of resultado2 | async; track $index) {
-        <div>
+        <div class="mt-5 text-3xl font-elvish font-light italic text-green-600">
       <li>
         {{item}}
       </li>
     </div>
     }
+    <div class="mt-5">
     {{muerte | async}}
-
+    </div>
   </div>
 
 </section>

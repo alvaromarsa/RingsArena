@@ -33,8 +33,23 @@ export interface ApiResponse {
     pages: number;
 }
 
+export interface Pareja {
+  bueno: Character;
+  malo: Character;
+  logCombate: string[];
+  resultadoFinal: string;
+  combateTerminado: boolean;
+  nombreGanador: string | null;
+}
+
+export interface CombateLog {
+  progreso: string;    // Una línea de log del evento (daño, esquiva)
+  final: string | null; // El mensaje de muerte o null
+}
+
 export interface Character {
   hp: number;
+  maxhp: number
   isAlive: boolean;
   name: string;
   damage: number;
@@ -45,6 +60,7 @@ export interface Character {
 
   const aragorn: Character = {
     hp: 150,
+    maxhp: 150,
     isAlive: true,
     name: 'Aragorn',
     damage: 70,
@@ -54,6 +70,7 @@ export interface Character {
 
   const legolas: Character = {
     hp: 90,
+    maxhp: 90,
     isAlive: true,
     name: 'Legolas',
     damage: 60,
@@ -63,6 +80,7 @@ export interface Character {
 
   const gimli: Character = {
     hp: 120,
+    maxhp: 120,
     isAlive: true,
     name: 'Gimli',
     damage: 50,
@@ -72,6 +90,7 @@ export interface Character {
 
   const frodo: Character = {
     hp: 50,
+    maxhp: 50,
     isAlive: true,
     name: 'Frodo',
     damage: 30,
@@ -81,6 +100,7 @@ export interface Character {
 
   const boromir: Character = {
     hp: 100,
+    maxhp: 100,
     isAlive: true,
     name: 'Boromir',
     damage: 45,
@@ -90,6 +110,7 @@ export interface Character {
 
   const gandalf: Character = {
     hp: 500,
+    maxhp: 500,
     isAlive: true,
     name: 'Gandalf',
     damage: 150,
@@ -99,6 +120,7 @@ export interface Character {
 
   const ent: Character = {
     hp: 300,
+    maxhp: 300,
     isAlive: true,
     name: 'Ent',
     damage: 100,
@@ -107,6 +129,7 @@ export interface Character {
 
   const theoden: Character = {
     hp: 110,
+    maxhp: 110,
     isAlive: true,
     name: 'Theoden',
     damage: 45,
@@ -116,6 +139,7 @@ export interface Character {
 
   const eomer: Character = {
     hp: 95,
+    maxhp: 95,
     isAlive: true,
     name: 'Eomer',
     damage: 50,
@@ -125,6 +149,7 @@ export interface Character {
 
   const gwaihir: Character = {
     hp: 200,
+    maxhp: 200,
     isAlive: true,
     name: 'Gwaihir',
     damage: 120,
@@ -134,6 +159,7 @@ export interface Character {
 
   const sam: Character = {
     hp: 45,
+    maxhp: 45,
     isAlive: true,
     name: 'Sam',
     damage: 35,
@@ -143,6 +169,7 @@ export interface Character {
 
   const montaraz: Character = {
     hp: 75,
+    maxhp: 75,
     isAlive: true,
     name: 'Montaraz',
     damage: 55,
@@ -152,6 +179,7 @@ export interface Character {
 
   const numenoreano: Character = {
     hp: 150,
+    maxhp: 150,
     isAlive: true,
     name: 'Númenoreano',
     damage: 55,
@@ -161,6 +189,7 @@ export interface Character {
 
   const espectro: Character = {
     hp: 200,
+    maxhp: 200,
     isAlive: true,
     name: 'Espectro',
     damage: 130,
@@ -169,6 +198,7 @@ export interface Character {
 
   const radagast: Character = {
     hp: 435,
+    maxhp: 435,
     isAlive: true,
     name: 'Radagast',
     damage: 135,
@@ -176,8 +206,19 @@ export interface Character {
     level: 1
   };
 
+  const faramir: Character = {
+    hp: 90,
+    maxhp: 90,
+    isAlive: true,
+    name: 'Faramir',
+    damage: 40,
+    dodge: 0.25,
+    level: 1
+  };
+
   const orco: Character = {
     hp: 80,
+    maxhp: 80,
     isAlive: true,
     name: 'Orco',
     damage: 40,
@@ -187,6 +228,7 @@ export interface Character {
 
   const nazgul: Character = {
     hp: 400,
+    maxhp: 400,
     isAlive: true,
     name: 'Nazgul',
     damage: 120,
@@ -196,6 +238,7 @@ export interface Character {
 
   const sauron: Character = {
     hp: 600,
+    maxhp: 600,
     isAlive: true,
     name: 'Sauron',
     damage: 150,
@@ -204,6 +247,7 @@ export interface Character {
 
   const haradrim: Character = {
     hp: 90,
+    maxhp: 90,
     isAlive: true,
     name: 'Haradrim',
     damage: 45,
@@ -213,6 +257,7 @@ export interface Character {
 
   const mumakil: Character = {
     hp: 300,
+    maxhp: 300,
     isAlive: true,
     name: 'Mumakil',
     damage: 130,
@@ -221,6 +266,7 @@ export interface Character {
 
   const troll: Character = {
     hp: 200,
+    maxhp: 200,
     isAlive: true,
     name: 'Troll',
     damage: 115,
@@ -229,6 +275,7 @@ export interface Character {
 
   const saruman: Character = {
     hp: 500,
+    maxhp: 500,
     isAlive: true,
     name: 'Saruman',
     damage: 150,
@@ -238,6 +285,7 @@ export interface Character {
 
   const gollum: Character = {
     hp: 35,
+    maxhp: 35,
     isAlive: true,
     name: 'Gollum',
     damage: 40,
@@ -247,6 +295,7 @@ export interface Character {
 
   const urukHai: Character = {
     hp: 115,
+    maxhp: 115,
     isAlive: true,
     name: 'Uruk-hai',
     damage: 50,
@@ -256,6 +305,7 @@ export interface Character {
 
   const lenguaDeSerpiente: Character = {
     hp: 60,
+    maxhp: 60,
     isAlive: true,
     name: 'Lengua de serpiente',
     damage: 30,
@@ -265,6 +315,7 @@ export interface Character {
 
   const bocaDeSauron: Character = {
     hp: 100,
+    maxhp: 100,
     isAlive: true,
     name: 'Boca de Sauron',
     damage: 50,
@@ -274,6 +325,7 @@ export interface Character {
 
   const ellaLarania: Character = {
     hp: 250,
+    maxhp: 250,
     isAlive: true,
     name: 'Ella-Laraña',
     damage: 120,
@@ -282,6 +334,7 @@ export interface Character {
 
   const trasgo: Character = {
     hp: 40,
+    maxhp: 40,
     isAlive: true,
     name: 'Trasgo',
     damage: 25,
@@ -289,11 +342,32 @@ export interface Character {
     level: 1
   };
 
+  const reytrasgo: Character = {
+    hp: 150,
+    maxhp: 150,
+    isAlive: true,
+    name: 'Rey Trasgo',
+    damage: 30,
+    dodge: 0,
+    level: 1
+  };
+
   const balrog: Character = {
     hp: 500,
+    maxhp: 500,
     isAlive: true,
     name: 'Balrog',
     damage: 150,
+    level: 1
+  };
+
+const huargo: Character = {
+    hp: 115,
+    maxhp: 115,
+    isAlive: true,
+    name: 'Huargo',
+    damage: 30,
+    dodge: 0.18,
     level: 1
   };
 
@@ -312,7 +386,8 @@ export const personajesBienObjetos: Character[] = [
     montaraz,
     numenoreano,
     espectro,
-    radagast
+    radagast,
+    faramir
   ];
 export const personajesMalObjetos: Character[] = [
     orco,
@@ -328,5 +403,7 @@ export const personajesMalObjetos: Character[] = [
     bocaDeSauron,
     ellaLarania,
     trasgo,
-    balrog
+    reytrasgo,
+    balrog,
+    huargo
   ];

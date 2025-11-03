@@ -43,6 +43,10 @@
   @apply focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:ring-offset-2 focus:ring-offset-gray-900;
 }
 
+.btn-medieval:disabled {
+  @apply bg-transparent text-red-900 cursor-not-allowed;
+}
+
 .btn-elvish {
   /* Layout y Base: Ligero, delicado y ligeramente curvo */
   @apply inline-flex items-center justify-center
@@ -74,7 +78,7 @@
 
 .card-title-custom {
   /* Estilo para el título de la tarjeta */
-  @apply text-xl font-bold mb-3 text-gray-800;
+  @apply text-xl font-bold mb-3;
 }
 
 .card-body-custom {

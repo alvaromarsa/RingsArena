@@ -16,17 +16,15 @@ import { Character } from '../Characters/Characters.component';
 })
 export class ViewCombatComponent {
 
-  //private RandomNumberInyect =inject(RandomNumberService);
-  //private GoodCharacterInject = inject(CharacterSelectionService);
-  //private EvilCharacterInject = inject(CharacterSelectionService);
+
   public CombatServiceInject = inject(CombatService)
   private cdr = inject(ChangeDetectorRef);
 
-  //randomNumber = this.RandomNumberInyect.eleccionDanio();
 
 goodCharacterSelected: Character = {
     name: 'Placeholder',
     hp: 0,
+    maxhp: 0,
     isAlive: false,
     damage: 0,
     level: 0
@@ -34,6 +32,7 @@ goodCharacterSelected: Character = {
   evilCharacterSelected: Character = {
     name: 'Placeholder',
     hp: 0,
+    maxhp: 0,
     isAlive: false,
     damage: 0,
     level: 0
@@ -41,7 +40,7 @@ goodCharacterSelected: Character = {
 
 
   combate = this.CombatServiceInject.combateIniciado
-  //resultado = this.CombatServiceInject.resultadoCombate$;
+
   muerte = this.CombatServiceInject.estaMuerto$;
 
   resultado2 = this.CombatServiceInject.resultados$
@@ -55,12 +54,6 @@ goodCharacterSelected: Character = {
 
     this.CombatServiceInject.ComenzarCombate();
 
-    //this.goodCharacterSelected = this.GoodCharacterInject.GoodCharacterSelection();
-    //this.evilCharacterSelected = this.EvilCharacterInject.EvilCharacterSelection();
-
-
-
-    //this.CombatServiceInject.causarDanio(this.goodCharacterSelected, this.evilCharacterSelected);
     this.combate = true;
 
     this.cdr.detectChanges();
