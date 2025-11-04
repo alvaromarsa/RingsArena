@@ -5,6 +5,19 @@ module.exports = {
     "./src/**/*.{html,ts,css}",
     "./src/app/**/*.{html,ts,css}", // Esto le dice a Tailwind que escanee todos los archivos HTML y TS en la carpeta 'src'
   ],
+  safelist: [
+    'bg-gray-900',
+    'text-yellow-100',
+    'border',
+    'border-gray-700',
+    'btn-elvish',
+    'font-elvish',
+    'font-light',
+    'text-mithril-silver',
+    'tournament-tree',
+    'bg-gray-50',
+    'text-morgul-shadow',
+  ],
   theme: {
     extend: {
       colors: {
