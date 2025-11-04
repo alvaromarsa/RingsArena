@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { ViewCombatComponent } from './ViewCombat/ViewCombat.component';
+import { ViewCombatComponent } from './pages/ViewCombat/ViewCombat.component';
 import { CharacterDescriptionComponent } from './pages/character-description/character-description.component';
 import { MenuComponent } from './pages/menu/menu.component';
 import { CharacterCreationComponent } from './pages/character-creation/character-creation.component';

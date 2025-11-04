@@ -1,5 +1,5 @@
 import { inject, Injectable } from '@angular/core';
-import { Subject} from 'rxjs';
+import { BehaviorSubject, Subject} from 'rxjs';
 
 
 import { CharacterSelectionService } from './CharacterSelection.service';
@@ -13,7 +13,9 @@ import { RandomNumberService } from './RandomNumber.service';
 })
 export class CombatService {
 
-   combateIniciado = false;
+  //combateIniciado = false;
+
+   combateIniciado$ = new BehaviorSubject<boolean>(false);
    characterSelection = inject(CharacterSelectionService);
 
    public selectedClones: Character[] = [];
@@ -24,10 +26,12 @@ export class CombatService {
     public resultados$ = new Subject<string[]>();
 
     ComenzarCombate(): void {
+
         this.characterSelection.getCharactersForCombat().subscribe({
             next: (clonesList: Character[]) => {
                 // ✅ Aquí recibes el array de dos personajes CLONADOS y seleccionados
                 this.selectedClones = clonesList;
+                this.combateIniciado$.next(true);
 
                 // Ahora tienes acceso a los clones y puedes pasarlos a la lógica de combate
                 const goodClone = this.selectedClones[0];
@@ -42,7 +46,6 @@ export class CombatService {
 
 
   public causarDanio(p1: Character, p2: Character): void {
-
 
     this.resultadosArray = [];
     const { name: name1 } = p1;
@@ -91,35 +94,36 @@ export class CombatService {
       p2.hp = p2.hp - damage1;
       this.resultadosArray.push(name1 + ' ha causado ' + damage1 + ' puntos de daño a ' + name2);
       this.resultados$.next(this.resultadosArray);
-      //this.resultadoCombate$.next(name1 + ' ha causado ' + damage1 + ' puntos de daño a ' + name2);
+
       if (p2.hp <= 0) {
         p2.isAlive = false;
         this.estaMuerto$.next(name2 + ' ha muerto');
         clearInterval(interval);
+        this.combateIniciado$.next(false);
+
+
       }
     } else {
       p1.hp = p1.hp - damage2;
       this.resultadosArray.push(name2 + ' ha causado ' + damage2 + ' puntos de daño a ' + name1);
       this.resultados$.next(this.resultadosArray);
-      //this.resultadoCombate$.next(name1 + ' ha causado ' + damage1 + ' puntos de daño a ' + name2);
+
       if (p1.hp <= 0) {
         p1.isAlive = false;
         this.estaMuerto$.next(name1 + ' ha muerto');
         clearInterval(interval);
+        this.combateIniciado$.next(false);
+
+
       }
     }
+
   }
 
 
   public cleanCombatText (): void{
     this.resultados$.next([]);
-
-    // Limpia el mensaje de muerte
     this.estaMuerto$.next('');
-
-    // (Opcional) Reinicia la bandera de combate si es necesario
-    this.combateIniciado = false;
-
   }
 
 

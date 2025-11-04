@@ -1,6 +1,5 @@
 import { Component, inject } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
-import { RouterLink } from '@angular/router';
 
 
 import { CharacterSelectionService } from '../../Services/CharacterSelection.service';
@@ -14,7 +13,7 @@ import { CombatTournamentService } from '../../Services/CombatTournament';
 @Component({
   selector: 'tournament',
   standalone: true,
-  imports: [NavbarComponent, RouterLink],
+  imports: [NavbarComponent],
   templateUrl: './tournament.component.html',
 
 })
@@ -44,6 +43,17 @@ export class TournamentComponent {
 
   ngOnInit(): void {
     // Suscribirse a los personajes del Bien
+
+}
+
+  characterSelectionTournament():void {
+
+    this.parejasDeBatalla = [];
+    this.ganadoresRonda1 = [];
+    this.finalWinner = null;
+    this.tournamentFinished = false;
+    this.combateActivo = null;
+
     this.goodCharacters$.subscribe(clones => {
         this.personajesBuenos = clones;
         console.log('Clon de personajes buenos cargado. Total:', this.personajesBuenos.length);
@@ -55,15 +65,6 @@ export class TournamentComponent {
         this.personajesMalos = clones;
         console.log('Clon de personajes malos cargado. Total:', this.personajesMalos.length);
     });
-}
-
-  characterSelectionTournament():void {
-
-    this.parejasDeBatalla = [];
-    this.ganadoresRonda1 = [];
-    this.finalWinner = null;
-    this.tournamentFinished = false;
-    this.combateActivo = null;
 
     if (this.personajesBuenos.length === 0 || this.personajesMalos.length === 0) {
       console.warn("No quedan personajes suficientes para un emparejamiento.");
@@ -151,10 +152,6 @@ export class TournamentComponent {
           this.ganadoresRonda1.push(ganadorCharacter);
 
           this.numeroCombates += 1;
-
-          console.log("numero de combates", + this.numeroCombates);
-
-
         }
       }
     },
@@ -224,7 +221,6 @@ public asignacionRonda(): void{
     this.parejasDeBatalla = nuevasParejas;
     this.ganadoresRonda1 = []; // Limpiamos la lista de ganadores para la siguiente ronda (si aplica)
 
-    console.log(`Ronda 2 iniciada. ${nuevasParejas.length} nuevas batallas.`);
 
 }
 
@@ -235,16 +231,6 @@ private barajarArray(array: any[]): void {
         [array[i], array[j]] = [array[j], array[i]];
     }
 }
-
-resetTournament(): void {
-    // 1. Reiniciar el estado del componente
-    this.parejasDeBatalla = [];
-    this.ganadoresRonda1 = [];
-    this.finalWinner = null;
-    this.tournamentFinished = false;
-    this.combateActivo = null;
-}
-
 
 
 }

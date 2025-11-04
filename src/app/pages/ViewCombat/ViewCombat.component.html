@@ -1,12 +1,21 @@
 <navbar/>
 <section class="ml-10">
   <div class="flex justify-center w-full font-elvish font-light italic text-yellow-100">
-    <button (click)="ComenzarCombate()" class="btn-medieval mr-2 mt-4 ">Comenzar combate</button>
+
+      <button (click)="ComenzarCombate()" class="btn-medieval mr-2 mt-4 "
+        [disabled]="combate | async">Comenzar combate
+      </button>
+
+
   </div>
 
   @if (combate) {
     <div class="mt-5">
-      <p class="text-3xl font-elvish font-light italic text-yellow-500">{{CombatServiceInject.selectedClones[0].name}} se enfrenta a {{CombatServiceInject.selectedClones[1].name}}</p>
+      @if (CombatServiceInject.selectedClones[0] && CombatServiceInject.selectedClones[1]) {
+        <p class="text-3xl font-elvish font-light italic text-yellow-500">
+          {{CombatServiceInject.selectedClones[0].name}} se enfrenta a {{CombatServiceInject.selectedClones[1].name}}
+        </p>
+      }
     </div>
   }
 
@@ -20,13 +29,9 @@
     </div>
     }
     <div class="mt-5">
-    {{muerte | async}}
+      {{muerte | async}}
     </div>
   </div>
 
 </section>
-<!---->
 
-<section>
-
-</section>
