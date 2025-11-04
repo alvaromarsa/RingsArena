@@ -6,6 +6,14 @@ module.exports = {
     "./src/app/**/*.{html,ts,css}", // Esto le dice a Tailwind que escanee todos los archivos HTML y TS en la carpeta 'src'
   ],
   safelist: [
+
+    {
+      pattern: /(bg|text|border)-(gray|red|yellow|blue)-(50|100|400|700|900)/,
+      variants: ['hover', 'focus'],
+    },
+    // Forzando el fondo del body/contenedor principal
+    'bg-gray-900',
+    'min-h-screen', // Si usas esto para el alto total
    // CLASES DE TUS COMPONENTES CUSTOM (YA LO TIENES)
     'btn-medieval',
     'btn-elvish',
