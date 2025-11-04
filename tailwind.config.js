@@ -2,7 +2,8 @@
 module.exports = {
   // CLAVE 1: Configurar la sección 'content' para Angular
   content: [
-    "./src/**/*.{html,ts}", // Esto le dice a Tailwind que escanee todos los archivos HTML y TS en la carpeta 'src'
+    "./src/**/*.{html,ts,css}",
+    "./src/app/**/*.{html,ts,css}", // Esto le dice a Tailwind que escanee todos los archivos HTML y TS en la carpeta 'src'
   ],
   theme: {
     extend: {
