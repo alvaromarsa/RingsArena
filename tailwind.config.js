@@ -6,17 +6,43 @@ module.exports = {
     "./src/app/**/*.{html,ts,css}", // Esto le dice a Tailwind que escanee todos los archivos HTML y TS en la carpeta 'src'
   ],
   safelist: [
-    'bg-gray-900',
-    'text-yellow-100',
-    'border',
-    'border-gray-700',
+   // CLASES DE TUS COMPONENTES CUSTOM (YA LO TIENES)
+    'btn-medieval',
     'btn-elvish',
-    'font-elvish',
-    'font-light',
-    'text-mithril-silver',
     'tournament-tree',
+    // ... (otras clases de componente) ...
+
+    // ✅ CLASES DE COLOR/FONDO QUE FALTAN EN EL ÁRBOL DEL TORNEO
     'bg-gray-50',
-    'text-morgul-shadow',
+    'text-gray-800',
+    'border-yellow-600',
+    'text-xl', // Asegurando tamaños de texto
+    'text-gray-500',
+
+    // ✅ CLASES DE COLOR DEL LOG Y LAS BATALLAS
+    'bg-white',
+    'bg-green-50',
+    'border-green-500',
+    'text-green-700',
+    'bg-red-50',
+    'border-red-500',
+    'text-red-700',
+    'bg-blue-400',
+    'text-green-800',
+    'bg-yellow-100',
+    'border-yellow-400',
+    'text-green-700',
+    'text-gray-600',
+    'text-gray-500',
+    'text-xs',
+
+    // ✅ CLASES DEL CONTENEDOR DE FIN DE TORNEO
+    'bg-green-100',
+    'border-green-600',
+    'text-green-800',
+    'text-green-700',
+    'text-green-900',
+    'text-3xl',
   ],
   theme: {
     extend: {
