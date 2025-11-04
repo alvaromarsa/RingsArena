@@ -8,7 +8,8 @@ module.exports = {
   safelist: [
 
     {
-      pattern: /(bg|text|border)-(gray|red|yellow|blue)-(50|100|400|700|900)/,
+
+      pattern: /(bg|text|border|fill|shadow)-(gray|red|yellow|green|blue)-(50|100|400|500|600|700|800|900)/,
       variants: ['hover', 'focus'],
     },
     // Forzando el fondo del body/contenedor principal
@@ -26,6 +27,13 @@ module.exports = {
     'border-yellow-600',
     'text-xl', // Asegurando tamaños de texto
     'text-gray-500',
+    'border-b-4',
+    'shadow-md',
+    'shadow-xl',
+    'min-h-screen',
+    'pt-10',
+    'text-4xl',
+
 
     // ✅ CLASES DE COLOR DEL LOG Y LAS BATALLAS
     'bg-white',
