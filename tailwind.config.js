@@ -38,6 +38,7 @@ module.exports = {
     'bg-blue-400',
     'text-green-800',
     'bg-yellow-100',
+    'bg-gray-50',
     'border-yellow-400',
     'text-green-700',
     'text-gray-600',
