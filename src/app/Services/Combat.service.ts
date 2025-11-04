@@ -21,6 +21,7 @@ export class CombatService {
    public selectedClones: Character[] = [];
 
    estaMuerto$ = new Subject<string>();
+   ganador$ = new Subject<string>();
 
     public resultadosArray: string[] = [];
     public resultados$ = new Subject<string[]>();
@@ -98,6 +99,7 @@ export class CombatService {
       if (p2.hp <= 0) {
         p2.isAlive = false;
         this.estaMuerto$.next(name2 + ' ha muerto');
+        this.ganador$.next(name1 + ' ha ganado');
         clearInterval(interval);
         this.combateIniciado$.next(false);
 
@@ -111,6 +113,7 @@ export class CombatService {
       if (p1.hp <= 0) {
         p1.isAlive = false;
         this.estaMuerto$.next(name1 + ' ha muerto');
+        this.ganador$.next(name2 + ' ha ganado');
         clearInterval(interval);
         this.combateIniciado$.next(false);
 

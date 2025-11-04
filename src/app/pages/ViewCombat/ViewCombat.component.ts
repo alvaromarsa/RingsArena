@@ -39,6 +39,7 @@ export class ViewCombatComponent {
 
   combate = this.CombatServiceInject.combateIniciado$;
   muerte = this.CombatServiceInject.estaMuerto$;
+  ganador = this.CombatServiceInject.ganador$;
   resultado2 = this.CombatServiceInject.resultados$;
 
 

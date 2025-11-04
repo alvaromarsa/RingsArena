@@ -62,9 +62,11 @@ public startCombat(p1: Character, p2: Character): Observable<CombateLog> {
             if (resultadoMuerte.muerte) {
 
               const mensajeCompletoLog = `${resultadoMuerte.log}. ${resultadoMuerte.muerte}`;
+
+              combateSubject.next({ progreso: resultadoMuerte.log, final: null });
                 // Emitir línea de muerte
                 combateSubject.next({
-                    progreso: mensajeCompletoLog, // El log completo para la lista
+                    progreso: resultadoMuerte.muerte, // El log completo para la lista
                     final: resultadoMuerte.muerte // ✅ CLAVE: Marcador de fin de combate
                 });
 
@@ -77,7 +79,7 @@ public startCombat(p1: Character, p2: Character): Observable<CombateLog> {
             }
         }
 
-    }, 500);
+    }, 3000);
 
     // 6. Devolver el Observable local
     return combateSubject.asObservable();
