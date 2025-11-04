@@ -3,104 +3,102 @@ module.exports = {
   // CLAVE 1: Configurar la sección 'content' para Angular
   content: [
     "./src/**/*.{html,ts,css}",
-    "./src/app/**/*.{html,ts,css}", // Esto le dice a Tailwind que escanee todos los archivos HTML y TS en la carpeta 'src'
+    "./src/app/**/*.{html,ts,css}", // Asegura que los componentes de torneo son escaneados
   ],
+
+  // CLAVE 2: SAFELIST - FUERZA LA INCLUSIÓN DE ESTILOS PERDIDOS EN NETLIFY
+  // Eliminamos el patrón RegExp para evitar errores de sintaxis en el build.
   safelist: [
+    // --- Estilos Base ---
+    'min-h-screen',
+    'bg-gray-900', // Fondo principal
 
-    {
-
-      pattern: /(bg|text|border|fill|shadow)-(gray|red|yellow|green|blue)-(50|100|400|500|600|700|800|900)/,
-      variants: ['hover', 'focus'],
-    },
-    // Forzando el fondo del body/contenedor principal
-    'bg-gray-900',
-    'min-h-screen', // Si usas esto para el alto total
-   // CLASES DE TUS COMPONENTES CUSTOM (YA LO TIENES)
+    // --- Utilidades de Componente Personalizadas (Custom) ---
     'btn-medieval',
     'btn-elvish',
     'tournament-tree',
-    // ... (otras clases de componente) ...
+    'font-elvish',
 
-    // ✅ CLASES DE COLOR/FONDO QUE FALTAN EN EL ÁRBOL DEL TORNEO
-    'bg-gray-50',
-    'text-gray-800',
-    'border-yellow-600',
-    'text-xl', // Asegurando tamaños de texto
-    'text-gray-500',
-    'border-b-4',
-    'shadow-md',
-    'shadow-xl',
-    'min-h-screen',
+    // --- Estilos de Layout y Texto (Torneo) ---
     'pt-10',
     'text-4xl',
+    'text-3xl',
+    'text-xl',
+    'text-xs',
+    'font-extrabold',
+    'font-light',
+    'italic',
 
+    // --- Clases de Color y Borde (Batallas y Log) ---
+    // Colores del torneo (gray-50, yellow-600, etc.)
+    'bg-gray-50',
+    'text-gray-800',
+    'border-b-4',
+    'border-yellow-600',
 
-    // ✅ CLASES DE COLOR DEL LOG Y LAS BATALLAS
+    // Contenedores de Batalla
     'bg-white',
+    'border',
+    'border-gray-300',
+
+    // Ganador (Bueno)
     'bg-green-50',
+    'border-l-4',
     'border-green-500',
     'text-green-700',
+    'text-green-800',
+
+    // Perdedor (Malo)
     'bg-red-50',
     'border-red-500',
     'text-red-700',
-    'bg-blue-400',
-    'text-green-800',
-    'bg-yellow-100',
-    'bg-gray-50',
-    'border-yellow-400',
-    'text-green-700',
-    'text-gray-600',
-    'text-gray-500',
-    'text-xs',
 
-    // ✅ CLASES DEL CONTENEDOR DE FIN DE TORNEO
+    // Estado/Ganador
+    'bg-blue-400',
+    'border-blue-400',
+    'text-gray-600',
+
+    // Log de Combate
+    'bg-yellow-100',
+    'border-yellow-400',
+
+    // Fin del Torneo
     'bg-green-100',
     'border-green-600',
-    'text-green-800',
-    'text-green-700',
     'text-green-900',
-    'text-3xl',
+    'text-green-700',
+    'shadow-xl',
+    'shadow-md',
   ],
+
   theme: {
     extend: {
       colors: {
         // --- BASE DE LA TIERRA MEDIA ---
-        // Marrón Rojizo Oscuro (Mordor/Puerta Negra) - Usado en tu Nav
-        'mordor-dark': '#450A0A', // Anteriormente rose-950
-
-        // Verde Hoja de Lothlórien (Élfico)
-        'lothlorien-leaf': '#16A34A', // Un verde vivo y profundo
-
-        // Tono de Tierra (Hobbiton/Comarca)
-        'shire-earth': '#D4D4D4', // Gris claro/beige para fondos
+        'mordor-dark': '#450A0A',
+        'lothlorien-leaf': '#16A34A',
+        'shire-earth': '#D4D4D4',
 
         // --- METALES Y FANTASÍA ---
-        // Oro (Anillo Único/Realeza)
-        'elvish-gold': '#FACC15', // Un amarillo dorado brillante (yellow-400)
-
-        // Plata (Mitril/Élfico)
-        'mithril-silver': '#E5E7EB', // Un gris muy claro (gray-200)
+        'elvish-gold': '#FACC15',
+        'mithril-silver': '#E5E7EB',
 
         // --- PELIGRO Y FUEGO ---
-        // Fuego/Lava (Monte del Destino)
-        'mount-doom-fire': '#B91C1C', // Rojo intenso y oscuro (red-700)
-
-        // Sombra de Morgul (Oscuridad/Nazgûl)
-        'morgul-shadow': '#1F2937', // Gris muy oscuro/negro (gray-800)
+        'mount-doom-fire': '#B91C1C',
+        'morgul-shadow': '#1F2937',
       },
-
       fontFamily: {
-        // Renombramos a 'elvish' y usamos la nueva fuente
         elvish: ['"Uncial Antiqua"', 'cursive'],
       },
     },
   },
-  // CLAVE 2: Añadir DaisyUI como plugin
+
+  // CLAVE 3: Plugins
   plugins: [
-    require('daisyui'), // ¡Esta línea es crucial!
+    require('daisyui'),
   ],
 
-    daisyui: {
-    themes: ["light", "dark", "cupcake"], // Ejemplo de temas
+  daisyui: {
+    themes: ["light", "dark", "cupcake"],
   },
 }
