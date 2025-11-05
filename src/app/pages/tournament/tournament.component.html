@@ -14,7 +14,7 @@
       <p class="text-xl text-gray-500">Aún no se han formado emparejamientos.</p>
     </div>
 
-  <div class="flex justify-center w-full font-elvish font-light italic text-yellow-100">
+  <div class="flex justify-center w-full font-elvish font-light italic text-yellow-300">
     <button (click)="characterSelectionTournament()" class="btn-medieval mr-2 mt-4 mb-5">¡Sortear emparejamientos!</button>
   </div>
   }
@@ -92,7 +92,7 @@
          <div class="flex space-x-4 mt-2 items-center h-full">
 
         @if (pareja.logCombate && pareja.logCombate.length > 0) {
-          <div class="flex-grow p-2 bg-yellow-100 border border-yellow-400 rounded-lg text-xs">
+          <div class="flex-grow p-2 border border-yellow-400 rounded-lg text-xs">
             <ul class="space-y-1">
               @for (logItem of pareja.logCombate; track $index) {
                     <li class="text-center break-words">{{ logItem }}</li>
