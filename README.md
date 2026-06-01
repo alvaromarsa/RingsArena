@@ -1,96 +1,52 @@
-# ⚔️ RingsArena
+## ⚔️ RingsArena
 
-Aplicación web desarrollada con Angular inspirada en el universo de El Señor de los Anillos. Permite consultar información de personajes obtenida desde una API externa y enfrentarlos entre sí en combates individuales o en formato campeonato.
+> Angular SPA que simula combates entre personajes del universo de El Señor de los Anillos con sistema de torneos eliminatorios en tiempo real, centrado en lógica de negocio frontend y estado reactivo.
 
----
+## 🎬 Live Demo
 
-## 🚀 Descripción
+![Tournament demo](./docs/gifs/combate.gif)
 
-RingsArena es una Single Page Application (SPA) desarrollada con Angular que combina consumo de APIs REST con lógica de simulación de combates.
+## ⚡ Core Features
 
-La aplicación permite explorar personajes del universo de Tolkien y utilizarlos en distintos modos de batalla, generando enfrentamientos de forma dinámica a partir de los datos obtenidos desde la API.
+- ⚔️ Sistema de combate en tiempo real con lógica de daño/esquiva
+- 🏆 Torneos eliminatorios automáticos con emparejamientos dinámicos
+- 🔁 Gestión de estado reactivo entre rondas
+- 📡 Consumo de API REST externa
+- 🧠 Lógica de negocio compleja en frontend (simulación de combate)
+- 🧩 Arquitectura modular basada en servicios Angular
 
----
+## 🧭 Exploración de personajes
 
-## ⚙️ Funcionalidades
+![Characters](./docs/screenshots/personaje.jpg)
 
-### 📖 Exploración de personajes
+## ⚔️ Combate
 
-- Consumo de datos desde API REST externa.
-- Visualización de información de personajes.
-- Navegación entre diferentes vistas de la aplicación.
+![Combat](./docs/screenshots/combate.jpg)
 
-### ⚔️ Combates individuales
+## 🧙 Creación de personajes
 
-- Selección de personajes mediante formularios reactivos.
-- Simulación de enfrentamientos uno contra uno.
-- Generación automática del vencedor según las características disponibles.
+![Creation](./docs/screenshots/formulario.jpg)
 
-### 🏆 Modo campeonato
+## 🏆 Torneo
 
-- Selección de múltiples participantes.
-- Simulación de rondas eliminatorias.
-- Generación automática del campeón del torneo.
+![Tournament](./docs/screenshots/torneo.jpg)
 
----
+## 🧠 Architecture
 
-## 🧱 Arquitectura del proyecto
+- Angular standalone components
+- Services layer para separación de lógica de negocio
+- RxJS para estado reactivo (Subjects / Observables)
+- TypeScript interfaces para modelado de datos
+- HttpClient como capa de integración API
+- Routing modular con vistas independientes
 
-La aplicación sigue una estructura basada en:
+## 🧰 Tech Stack
 
-- Componentes Angular para la interfaz de usuario.
-- Servicios para el acceso y gestión de datos.
-- Formularios reactivos para la selección de participantes.
-- Routing para navegación entre vistas.
-- Interfaces TypeScript para tipado de datos.
-- RxJS para gestión de respuestas asíncronas.
+Angular • TypeScript • RxJS • Angular Router • Reactive Forms • HttpClient • Standalone Components
 
----
+## 🚀 Live Demo
+https://lotrarena.netlify.app
 
-## 🛠️ Tecnologías utilizadas
+## 🎯 Project Goal
 
-- Angular
-- TypeScript
-- RxJS
-- Angular Router
-- Reactive Forms
-- HttpClient
-- HTML5
-- CSS3
-
----
-
-## 🎯 Objetivos del proyecto
-
-Este proyecto fue desarrollado para profundizar en conceptos fundamentales de Angular:
-
-- Consumo de APIs REST.
-- Formularios reactivos.
-- Arquitectura basada en componentes y servicios.
-- Manejo de datos asíncronos.
-- Navegación mediante Angular Router.
-- Modelado de datos mediante interfaces TypeScript.
-
----
-
-## 🚀 Posibles mejoras futuras
-
-- Sistema de estadísticas de combate.
-- Historial de enfrentamientos.
-- Persistencia de torneos.
-- Clasificación global de personajes.
-- Diseño responsive mejorado.
-- Optimización de rendimiento y experiencia de usuario.
-
----
-
-## 👨‍💻 Autor
-
-Álvaro Martínez Sagristá  
-Frontend Developer (Angular)
-
----
-
-## 📌 Nota
-
-Proyecto desarrollado con fines educativos para practicar Angular, consumo de APIs REST y lógica de aplicación basada en simulaciones de combate.
+Este proyecto está enfocado en la práctica de arquitectura frontend en Angular, simulación de lógica de negocio compleja y gestión de estado reactivo en aplicaciones SPA modernas.
